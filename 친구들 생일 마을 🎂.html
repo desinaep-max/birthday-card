@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>친구들 생일 마을 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffd6e7;--shell:#ff8fbf;--shell2:#ff6fa8;--ink:#6b3a47;--paper:#fffaf0;--sky:#ffe9f2;--grass:#c9efb8;--grass2:#b4e3a0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a1830;--shell:#d9608f;--shell2:#b84677;--ink:#5a2d3c;--paper:#fff3e6;--sky:#f6d3e6;--grass:#a9d99a;--grass2:#93c985}}
+:root[data-theme="dark"]{--bg:#2a1830;--shell:#d9608f;--shell2:#b84677;--ink:#5a2d3c;--paper:#fff3e6;--sky:#f6d3e6;--grass:#a9d99a;--grass2:#93c985}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:var(--bg);font-family:'Jua','Apple SD Gothic Neo','Malgun Gothic',sans-serif;display:flex;align-items:center;justify-content:center;padding:12px;overflow-x:hidden;color:var(--ink)}
+.egg{width:min(94vw,440px);background:radial-gradient(circle at 35% 20%,#ffc2dc,var(--shell) 40%,var(--shell2));border-radius:50% 50% 46% 46%/42% 42% 58% 58%;padding:9% 8% 7%;border:4px solid #fff8;box-shadow:0 10px 0 rgba(0,0,0,.15),inset 0 -8px 0 rgba(0,0,0,.08)}
+.logo{text-align:center;color:#fff;font-size:17px;letter-spacing:3px;margin-bottom:8px;text-shadow:0 2px 0 rgba(0,0,0,.2)}
+.bezel{background:#fff7;border-radius:22px;padding:10px;box-shadow:inset 0 3px 0 rgba(0,0,0,.12)}
+.screen{position:relative;aspect-ratio:1/1.02;border-radius:14px;overflow:hidden;background:linear-gradient(var(--sky) 0 58%,var(--grass) 58% 100%);border:3px solid var(--ink);container-type:inline-size}
+.screen:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 1px,transparent 1px 4px),repeating-linear-gradient(90deg,rgba(0,0,0,.04) 0 1px,transparent 1px 4px)}
+.ground{position:absolute;left:0;right:0;bottom:0;height:42%;background:repeating-linear-gradient(90deg,var(--grass2) 0 6px,transparent 6px 20px);opacity:.35}
+.banner{position:absolute;top:3%;left:0;right:0;text-align:center;font-size:clamp(13px,5.4cqw,24px);color:#ff4f93;letter-spacing:2px;text-shadow:2px 2px 0 #fff;animation:sway 1.2s steps(2) infinite}
+@keyframes sway{50%{transform:translateY(-2px)}}
+.hint{position:absolute;bottom:2.5%;left:50%;transform:translateX(-50%);font-size:clamp(10px,3.4cqw,14px);background:#fff;border:2px solid var(--ink);border-radius:10px;padding:2px 10px;white-space:nowrap;z-index:5}
+.cake{position:absolute;left:50%;top:50%;width:25%;transform:translate(-50%,-50%);z-index:2}
+.cake svg{width:100%;display:block;overflow:visible}
+.glow{position:absolute;left:50%;top:28%;width:130%;aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(circle,#ffe58a99,transparent 65%);animation:gl .6s steps(3) infinite alternate;z-index:-1}
+@keyframes gl{to{transform:translate(-50%,-50%) scale(1.15);opacity:.7}}
+.fl{transform-box:fill-box;transform-origin:50% 100%;animation:fk .45s steps(2) infinite}
+@keyframes fk{0%{transform:scale(1,1)}50%{transform:scale(.8,1.28) translateX(.25px)}}
+.ch{position:absolute;width:23%;transform:translate(-50%,-50%);background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit;z-index:3;-webkit-tap-highlight-color:transparent}
+.ch .sp{display:block;animation:bob 1s steps(2) infinite;animation-delay:var(--d)}
+.ch svg{width:100%;display:block;filter:drop-shadow(0 2px 0 rgba(107,58,71,.25))}
+.ch:hover .sp,.ch:focus-visible .sp{animation-duration:.35s}
+.ch:focus-visible{outline:3px dashed #ff4f93;outline-offset:2px;border-radius:10px}
+@keyframes bob{50%{transform:translateY(-6%)}}
+.tag{display:block;margin:1px auto 0;width:max-content;font-size:clamp(9px,3.1cqw,13px);background:#fff;border:2px solid var(--ink);border-radius:8px;padding:0 6px;line-height:1.35}
+.mail{position:absolute;top:-8%;right:2%;font-size:clamp(12px,4.6cqw,20px);animation:hop .6s steps(2) infinite;text-shadow:0 0 3px #fff}
+.read .mail{animation:none;color:#ff4f93}
+@keyframes hop{50%{transform:translateY(-4px)}}
+.fh{position:absolute;color:#ff6fa8;font-size:clamp(10px,3.6cqw,16px);animation:fy 4s linear infinite;opacity:0;z-index:1}
+@keyframes fy{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-70px);opacity:0}}
+.btns{display:flex;justify-content:center;gap:18%;margin-top:14px}
+.b{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#ffe1ef 55%,#ffb6d3);border:3px solid #fff8;box-shadow:0 4px 0 rgba(0,0,0,.2)}
+.b:nth-child(2){transform:translateY(8px)}
+.ov{position:fixed;inset:0;background:rgba(60,20,50,.55);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}
+.ov.on{display:flex}
+.paper{width:min(100%,380px);background:var(--paper);border:4px solid var(--ink);border-radius:16px;padding:18px 18px 16px;display:flex;flex-direction:column;max-height:calc(100vh - 36px);max-height:calc(100dvh - 36px);box-shadow:0 8px 0 rgba(0,0,0,.25);animation:pop .3s steps(4)}
+@keyframes pop{from{transform:scale(.4) rotate(-6deg)}}
+.hd{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.hd svg{width:56px;flex:none}
+.hd b{font-weight:400;font-size:20px;color:#ff4f93}
+.hd small{display:block;font-size:13px}
+.txt{white-space:pre-wrap;font-size:16px;line-height:30px;min-height:120px;flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;color:#4b2a35;background:repeating-linear-gradient(transparent 0 29px,#f3cfdc 29px 30px) local;word-break:keep-all;overflow-wrap:anywhere}
+.frm{text-align:right;font-size:16px;color:#ff4f93}
+.x{display:block;margin:10px auto 0;font:inherit;font-size:16px;background:#ff8fbf;color:#fff;border:3px solid var(--ink);border-radius:12px;padding:5px 22px;cursor:pointer;box-shadow:0 3px 0 var(--ink)}
+.x:active{transform:translateY(3px);box-shadow:none}
+.hd,.frm,.x{flex:none}.ch,.x{touch-action:manipulation}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<main class="egg">
+  <div class="logo">♥ OVER COMMER ♥</div>
+  <div class="bezel"><div class="screen" id="scr">
+    <div class="ground"></div>
+    <div class="banner">HAPPY BIRTHDAY!</div>
+    <div class="cake" id="cake"></div>
+  </div></div>
+  <div class="btns"><span class="b"></span><span class="b"></span><span class="b"></span></div>
+</main>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true">
+  <div class="paper">
+    <div class="hd"><span id="av"></span><div><b id="to">To. 수정 자매님</b><small id="nm"></small></div></div>
+    <div class="txt" id="tx"></div>
+    <div class="frm" id="fr"></div>
+    <button class="x" id="cl">닫기 ♥</button>
+  </div>
+</div>
+
+<script>
+const O='#6b3a47';
+const EARS={
+ bear:[".. oooo....oooo..".replace(' ',''),".oHEEHooooHEEHo.",".oHEEHHHHHHEEHo."],
+ cat:["..o..........o..",".oEo.oooooo.oEo.","oEEHHHHHHHHHHEEo"],
+ bunny:["..oo........oo..","..oEo......oEo..",".oHEHoooooooHEHo"]
+};
+const BODY=[".oHHSHHHHHHSHHo.","oHHooooooooooHHo","oHoFFFFFFFFFFoHo","oHoFFFFFFFFFFoHo","oHoFFeFFFFeFFoHo","oHoFFFFnnFFFFoHo","oHocFFFFFFFFcoHo",".oHooooooooooHo.",".oHHHHHHHHHHHHo.",".oHSHHHBBHHHSHo.",".oHHHHBBBBHHHHo.",".oHHSHHHHHHSHHo.","..ooHHHooHHHoo..","...oooo..oooo..."];
+const ACC={
+ bow:[[2,11],[2,12],[3,10],[3,11],[3,12],[4,12]],
+ bowL:[[2,4],[2,3],[3,5],[3,4],[3,3],[4,3]],
+ dot:[[2,7],[2,8],[3,7],[3,8]]
+};
+function sprite(c){
+ const rows=[...EARS[c.ear],...BODY].map(r=>r.split(''));
+ (ACC[c.acc]||[]).forEach(([r,k])=>{rows[r][k]='B'});
+ const col={o:O,H:c.h,S:c.s,E:c.e,B:c.b,F:'#fffafc',e:'#3a2230',n:'#ffc83d',c:'#ff9aa8'};
+ let s='<svg viewBox="0 0 16 17" shape-rendering="crispEdges" aria-hidden="true">';
+ rows.forEach((r,y)=>r.forEach((k,x)=>{if(k!=='.')s+=`<rect x="${x}" y="${y}" width="1.03" height="1.03" fill="${col[k]}"/>`}));
+ return s+'</svg>';
+}
+const F=[
+ {n:'사라',ear:'bear',acc:'bow',h:'#f2cf94',s:'#7b4b2b',e:'#2f2226',b:'#ff7fae',x:22,y:24,
+  t:'생일 축하해! 🎂\n표범무늬 후드를 입고 달려왔어. 올해는 네가 좋아하는 일들만 가득했으면 좋겠어. 오늘은 마음껏 먹고 마음껏 웃자!'},
+ {n:'수정',ear:'bear',acc:'bow',h:'#ffa3c7',s:'#ff72a8',e:'#ffffff',b:'#ff4f93',x:78,y:24,
+  t:'태어나줘서 정말 고마워 🎀\n네 곁에 있으면 하루가 괜히 달콤해져. 앞으로도 오래오래 같이 놀자!'},
+ {n:'수빈',ear:'bunny',acc:'dot',h:'#a6e8d5',s:'#6fd0b5',e:'#ffd6e5',b:'#ff8fb7',x:15,y:52,
+  t:'오늘의 주인공 생일 축하해 🌿\n너는 우리 마을의 시원한 바람 같은 사람이야. 올 한 해도 상쾌하고 행복하길!'},
+ {n:'인애',ear:'cat',acc:'bowL',h:'#e3c4a0',s:'#c49a70',e:'#ffd6e0',b:'#e86a8d',x:85,y:52,
+  t:'생일 축하해, 소중한 친구야 ☕\n힘든 날엔 따뜻한 차 한 잔처럼 곁에 있어줄게. 오늘만큼은 걱정 없이 행복해야 해!'},
+ {n:'에스더',ear:'cat',acc:'dot',h:'#cdb0f5',s:'#a883e6',e:'#ffffff',b:'#ffd75e',x:28,y:80,
+  t:'짝짝짝! 생일 축하해 🍇\n소원 빌 준비됐지? 네 소원이 전부 이뤄지도록 내가 보랏빛 별에게 부탁해둘게!'},
+ {n:'효정',ear:'bear',acc:'bow',h:'#ffe58a',s:'#f6c94a',e:'#fff6cc',b:'#ff8fb1',x:72,y:80,
+  t:'생일 축하해! 🍋\n네가 있어서 우리 마을이 늘 반짝반짝 빛나. 올해도 상큼하고 즐거운 일만 가득하자!'}
+];
+
+const L={
+'사라':`넘넘 존경하고 사랑하는 수정자매님!!! 넘넘 생일축하드려요!!!! 청년부에 적응해야하는 시기에 수정자매님께서 기도해주시고 도와주셨던 모든 일들 추억들!! 평생 기억에 남을 거 같아요ㅠㅠ 수정자매님께서 보여주신 사랑으로 지금까지 제가 신앙을 하고 있다고 확신합니다ㅠㅠ 바보같은 질문과 행동도 더 귀엽게 봐주시고 늘 응원해주시고 기도해주심에 정말 넘넘 감사드려요!!!! 수정자매님같은 영혼의 목자가 계셔서 저는 정말 복받은 사람이에요!! 제가 아줌마가 되어도 할머니가 되어도 평생 못잊을 사랑입니다! 수정자매님 말로는 다 표현 못하지만 정말 늘 사랑하고 존경하구요 늘 기도하겠습니다!!! 늘 저 받아주시고 중보해주시고 예수님의 사랑의 본이 되어주셔서 감사드려요!! 사랑해요🩷🩷🩷`,
+'효정':`많은 양들의 귀한 목자, 수정자매님❤️ 생일을 넘넘 축하드려요!!!\n저에게도 그리고 많은 사람들에게도 힘이 되시는 수정자매님 ㅎㅎ 목자로써의 사명, 사역, 직장 등 많은 것들 귀하게 감당하고 계시는 수정자매님 항상 감사합니다\n생일 때마다 늘 감사한 걸 전하게 되는 것 같아요! 작년과 올해 저에게 여러모로 특별한 해(쉽지 않았던 해)인데 그런 저를 보며 단 한번도 뭐라하시지 않으시고 사랑으로 받아주신게 은혜가 되어요!\n저는 참 연약해서 같은 셀 자매들의 연약함을 볼 때 품고 감당해야하는 것을 머리로 알고있음에도 불구하고 품어지지 않고, 나도 똑같이 행동하고 싶다는 생각을 하는데 수정자매님은 이렇게 연약하고 부족한 저를 보며 솔직히 답답할만하실 텐데도 용납과 사랑, 그리고 인내로 받아주신게 진짜 저에겐 큰 은혜인 것 같아요ㅠㅠ\n어떤 답답한 소리를 해도 받아주시고, 때로는 저 스스로도 이게 리더로서 할 소린가 싶은 헛소리도 그냥 이해해주시고 하시는 게 진짜 수정자매님을 통해 제가 어떻게 살아야 하는지 어떤 리더가 되어야 하는지 본보기가 되는 것 같아 늘 감사합니다!\n그리고 참 올해 저에게 많은 사건(?) 아닌 사건이 있었는데 그때 교제할 때마다 수정자매님이 답변과 교제의 내용이 제가 좀 문제를 돌파하게 되는 큰 부분이 되었던 것 같아요!\n저 혼자서 끙끙 앓고 답답해하고 누군가를 미워하고 했던 부분도 수정자매님과 교제할 때 어떻게 해결하면 좋을지, 어떤 도움을 받을지 정말 하나하나 가르쳐주셔서 아기처럼 잘 배워갔던 것 같습니다\n사랑하는 수정자매님~ 청년 시절에 수정자매님의 양으로 살아갈 수 있는 건 참 복인 것 같아요! 수정자매님이 늘 목자로 살 수 있는 것, 그리고 목자로 살아가는 것이 가장 큰 은혜라고 하셨는데 저 역시도 마찬가지에요 ㅎㅎ 저의 귀한 목자가 되어주시고 기도해주셔서 늘 감사하고 사랑합니다 쪽쪽❤️ 하나님의 귀한 딸, 이기는자의 귀한 목자 수정자매님 진심으로 생일 축하드려요!!!`,
+'에스더':`수정자매님!! 생일 축하드려용!!\n자매님의 양 스더입니당 ㅎㅎㅎㅎㅎ\n\n저의 신앙을 돌아보면 자매님과 함께 했던 시간만큼 성장했던 때는 없는 것 같아요. 자매님을 통해서 일하시는 하나님의 사랑과 은혜가 있기 때문에 지금까지 신앙하고 있습니다. 제가 여러번 말씀드리지만 자매님을 목자로 만난 것이 제 인생에서 큰 은혜에요!! 제 가족보다 저를 더 사랑하시고 이해하시고 알고 계셔서 제가 힘들 때나 좋을 때나 자매님께 얘기하고 나누고 또 듣게 되는 게 매 주 있을지라도 매 주 저에게 새로운 은혜랍니당 제게 은혜가 많은 것이 자매님께 많은 배려와 십자가가 있으실 거라 제가 마음으로는 미안한 부분이 많은데요. 그래도 하나님께서 다 갚아주시고 주님의 은혜가 있으실 것 같아서 기뻐하고 주님과 자매님께 더 깊이 감사하겠습니다!!\n자매님 제가 많이 많이 사랑하고 또 사랑합니다! 저의 목자로 또 영적 언니 리더로 저를 많이 사랑해주시고 가르쳐주시고 같이 경험해주셔서 감사해요!! 스더 많이 쫄본데 자매님 덕분에 조금 나아진 것 같아영 ㅎㅎㅎㅎㅎ\n\n자매님 생일 많이 많이 축하하고 축복드리고 제 마음으로 안아드리고 싶어영!! (저는사랑의언어가스킨십이니까영) 생일가운데 가장 큰 주님의 사랑, 가장 깊은 주님의 사랑, 가장 따뜻한 주님의 사랑을 촉촉히 받는 생일 되시길 바래요!! 자매님 생일 넘넘 축하드리구 많이 많이 사랑합니당!`,
+'수빈':`수정 자매님~~!!\n생일 축하드려용♡♡\n셀안의 한 영혼을 감당하는 것도 쉽지 않은데 이기는자팀 많은 영혼들을 사랑으로 품어주시고 관심가져주는 목자의 본을 보여주심에 감사드려용~♡♡\n\n매해 생일 때면 특별한 은혜를 많이 받으셨던 것 같은데 올 해도 하나님과 깊은 만남이 있는 생일 보내세용-!! 생일 많이많이 축하드려욤:)`,
+'인애':`수정자매님 생일 축하드립니당!!\n수정자매님과 함께 한지가 꽤 되었네요 ㅎㅎ 제가 수정자매님과 반대 기질이라 저를 감당해주시기 쉽지 않으셨을 텐데 잘 챙겨주셔서 감사했습니다:)) 제가 부족한 부분들을 수정자매님 보면서 많이 배웠습니다!\n항상 친근하게 교제해주시는 수정자매님 통해 많은 위로와 격려를 받았던것 같아요! 이기는자팀에서 많은 것을 배워서 혼성셀에서 짧은 기간이지만 잘 동역해보겠습니다!! 그동안 저를 챙겨주시고 감당해주셔서 감사했습니당! 앞으로 수정자매님의 삶가운데 하나님의 임재와 은혜가 더욱 풍성하고 많은 청년 자매들이 귀하게 성장하고 세워지기를 축복드립니다^^!`,
+'수정':`오늘의 주인공 수정 자매님 🎂\n친구들이 한 명 한 명 정성을 담아 쓴 편지가 마을에 가득해요. 사랑하는 마음 가득 안고 행복한 생일 보내세요 ♥`
+};
+F.forEach(c=>{if(L[c.n])c.t=L[c.n]});
+
+// cake (pixel)
+document.getElementById('cake').innerHTML=`<div class="glow"></div><svg viewBox="0 0 24 26" shape-rendering="crispEdges">
+<rect x="0" y="8" width="24" height="16" fill="${O}"/>
+<rect x="1" y="9" width="22" height="4" fill="#fffafc"/>
+<rect x="1" y="13" width="22" height="5" fill="#ffb3cf"/>
+<rect x="3" y="13" width="2" height="2" fill="#fffafc"/><rect x="9" y="13" width="2" height="3" fill="#fffafc"/><rect x="15" y="13" width="2" height="2" fill="#fffafc"/><rect x="20" y="13" width="2" height="3" fill="#fffafc"/>
+<rect x="1" y="18" width="22" height="5" fill="#ff7fae"/>
+<rect x="4" y="20" width="1" height="1" fill="#fff"/><rect x="10" y="19" width="1" height="1" fill="#ffe58a"/><rect x="16" y="21" width="1" height="1" fill="#fff"/><rect x="20" y="19" width="1" height="1" fill="#ffe58a"/>
+<rect x="2" y="7" width="2" height="2" fill="#ff4f6d"/><rect x="8" y="7" width="2" height="2" fill="#ff4f6d"/><rect x="14" y="7" width="2" height="2" fill="#ff4f6d"/><rect x="20" y="7" width="2" height="2" fill="#ff4f6d"/>
+<rect x="-1" y="24" width="26" height="2" fill="#fff"/><rect x="-1" y="26" width="26" height="1" fill="${O}"/>
+${[5,11,17].map((x,i)=>`<rect x="${x}" y="4" width="2" height="5" fill="#fffafc"/><rect x="${x}" y="5" width="2" height="1" fill="#6fc7ff"/><rect x="${x}" y="7" width="2" height="1" fill="#6fc7ff"/>
+<g class="fl" style="animation-delay:${i*.15}s"><rect x="${x}" y="1" width="2" height="1" fill="#ff9f43"/><rect x="${x}" y="2" width="2" height="2" fill="#ffe066"/></g>`).join('')}
+</svg>`;
+
+// characters
+const scr=document.getElementById('scr');
+const ov=document.getElementById('ov'),tx=document.getElementById('tx');
+let timer;
+F.forEach((c,i)=>{
+ const b=document.createElement('button');
+ b.className='ch';b.style.left=c.x+'%';b.style.top=c.y+'%';b.style.setProperty('--d',(i*.17)+'s');
+ b.setAttribute('aria-label',c.n+'의 편지 읽기');
+ b.innerHTML=`<span class="sp">${sprite(c)}</span><span class="tag">${c.n}</span><span class="mail">✉</span>`;
+ b.onclick=()=>open(c,b);
+ scr.appendChild(b);
+});
+for(let i=0;i<7;i++){const h=document.createElement('span');h.className='fh';h.textContent='♥';h.style.left=(8+i*13)+'%';h.style.top=(40+(i%3)*18)+'%';h.style.animationDelay=(i*.7)+'s';scr.appendChild(h)}
+
+function open(c,b){
+ b.classList.add('read');b.querySelector('.mail').textContent='♥';
+ document.getElementById('av').innerHTML=sprite(c);
+ document.getElementById('nm').textContent=c.n==='수정'?'오늘의 주인공':c.n+'에게서 온 편지';
+ document.getElementById('fr').textContent=c.n==='수정'?'':'From. '+c.n+' ♥';
+ tx.textContent='';ov.classList.add('on');
+ clearInterval(timer);let k=0;const t=c.t;
+ tx.scrollTop=0;const st=Math.max(1,Math.ceil(t.length/90));
+ tx.onclick=()=>{clearInterval(timer);tx.textContent=t};
+ timer=setInterval(()=>{k=Math.min(t.length,k+st);tx.textContent=t.slice(0,k);if(k>=t.length)clearInterval(timer)},30);
+ document.getElementById('cl').focus();
+}
+function close(){clearInterval(timer);ov.classList.remove('on')}
+document.getElementById('cl').onclick=close;
+ov.onclick=e=>{if(e.target===ov)close()};
+addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+</script>
+</body>
+</html>
